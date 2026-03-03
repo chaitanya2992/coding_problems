@@ -1,10 +1,15 @@
+/*
+3760. Maximum Substrings With Distinct Start
+
+You are given a string s consisting of lowercase English letters.
+Return an integer denoting the maximum number of substrings you can 
+split s into such that each substring starts with a distinct character 
+(i.e., no two substrings start with the same character).*/
+
 class Solution {
     public int maxDistinct(String s) {
-        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-		
-		for(char c : s.toCharArray()) {
-			map.put(c, map.getOrDefault(c, 0)+1);
-		}
-		return(map.size());
+        HashSet<Character> set = new HashSet<Character>();
+        for(char ch : s.toCharArray()) set.add(ch);
+        return set.size();
     }
 }
